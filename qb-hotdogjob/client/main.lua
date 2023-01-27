@@ -104,50 +104,6 @@ local function GetAvailableHotdog()
     return retval
 end
 
---[[local function UpdateLevel()
-    local MyRep = PlayerData.metadata["jobrep"]["hotdog"]
-
-    if MyRep ~= nil then
-        if MyRep >= 1 and MyRep < 50 then
-            Config.MyLevel = 1
-        elseif MyRep >= 50 and MyRep < 100 then
-            Config.MyLevel = 2
-        elseif MyRep >= 100 and MyRep < 200 then
-            Config.MyLevel = 3
-        elseif MyRep >= 100 and MyRep < 200 then
-            Config.MyLevel = 3
-        elseif MyRep >= 200 then
-            Config.MyLevel = 4
-        end
-    else
-        Config.MyLevel = 1
-    end
-
-    local ReturnData = {
-        lvl = Config.MyLevel,
-        rep = MyRep
-    }
-
-    return ReturnData
-end--]]
-
---[[local function UpdateUI()
-    IsUIActive = true
-    CreateThread(function()
-        while true do
-            SendNUIMessage({
-                action = "UpdateUI",
-                IsActive = IsUIActive,
-                Stock = Config.Stock,
-                Level = UpdateLevel()
-            })
-            if not IsUIActive then
-                break
-            end
-            Wait(1000)
-        end
-    end)
-end--]]
 
 local function LetKraamLose()
     local PlayerPed = PlayerPedId()
